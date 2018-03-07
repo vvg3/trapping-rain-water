@@ -24,11 +24,13 @@ public class RainWater {
                     waterContained += (waterInJeopardy - ((leftWallHeight - array[i]) * ((i - leftWallIndex))));
                 }
 
-            } else if (array[i] >= leftWallHeight) {
-                waterContained += waterInJeopardy;
-                waterInJeopardy = 0;
-                leftWallHeight = array[i];
-                leftWallIndex = i;
+            } else {
+                if (array[i] >= leftWallHeight) {
+                    waterContained += waterInJeopardy;
+                    waterInJeopardy = 0;
+                    leftWallHeight = array[i];
+                    leftWallIndex = i;
+                }
             }
         }
 
